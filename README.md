@@ -17,5 +17,5 @@ Edit Data : Admin dapat melakukan edit pada data penyewaan
 
 pembagian : 
 
-Rafi : membuat database,membuat login,register
-Ilham: Membuat CRUD
+Rafi : membuat database dan Creat
+Ilham: Membuat Read, Update, Delete
