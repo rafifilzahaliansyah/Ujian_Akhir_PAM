@@ -5,11 +5,6 @@ mengedit data penyewaan, mendelete data penyewaan, dan dapat melihat data penyew
 untuk menyimpan data peminjaman room turnamen, fungsi fungsi dapat dilihat dalam use case berikut ini
 ![image](https://github.com/rafifilzahaliansyah/Ujian_Akhir_PAM/assets/114916906/90eebf20-cb65-4024-82ea-2807607ac62e)
 
-
-
-sign up : admin dapat mendaftarkan akun mereka untuk dapat melalukan login
-Login : admin yang telah terdaftar dapat measuk kedalam aplikasi unutk memulai mengelola room turnamen
-Logout : admin dapat keluar dari akunnya
 add data : admin dapat menambahakan data baru penyewaan
 view data : admin dapat melihat data penyimpanan
 Delete Data : Admin dapat menghapus data penyewaan
