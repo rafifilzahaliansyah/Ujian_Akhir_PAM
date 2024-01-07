@@ -2,8 +2,9 @@ Project Description
 aplikasi ini dibuat untuk memudahkan admin dalam mengelola bisnis room tournamen yang akan disewakan,
 sehingga admin dapat dengan mudah menjalankan bisnisnya tersebut karena admin dengan mudah dapat menambahkan data penyewaan, 
 mengedit data penyewaan, mendelete data penyewaan, dan dapat melihat data penyewaan. aplikasi ini menggunakan penyimpanan firebase 
-dan dan menggunakan autentikasi firebase unutk proses login, fungsi fungsi dapat dilihat dalam use case berikut ini
-![Screenshot 2024-01-07 195809](https://github.com/rafifilzahaliansyah/Ujian_Akhir_PAM/assets/114916906/3edbebf5-710f-49cc-b695-1725fdf92715)
+untuk menyimpan data peminjaman room turnamen, fungsi fungsi dapat dilihat dalam use case berikut ini
+![image](https://github.com/rafifilzahaliansyah/Ujian_Akhir_PAM/assets/114916906/90eebf20-cb65-4024-82ea-2807607ac62e)
+
 
 
 sign up : admin dapat mendaftarkan akun mereka untuk dapat melalukan login
