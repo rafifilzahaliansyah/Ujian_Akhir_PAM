@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "676517876155",
+    "project_id": "ujian-akhir-pam",
+    "storage_bucket": "ujian-akhir-pam.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:676517876155:android:d306c1b5b0073f5dd0b49e",
+        "android_client_info": {
+          "package_name": "com.example.ujian_akhir_pam"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTo-8OS6AK0uejRlilZ5P3H2k2ojHq8aQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
