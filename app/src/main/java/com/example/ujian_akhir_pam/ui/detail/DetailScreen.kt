@@ -159,8 +159,8 @@ fun ItemDetails(
                 )
             )
             ItemDetailsRow(
-                labelResID = "Alamat",
-                itemDetail = kontak.alamat,
+                labelResID = "waktu penyewaan",
+                itemDetail = kontak.waktupenyewaan,
                 modifier = Modifier.padding(
                     horizontal = 12.dp
                 )
@@ -168,6 +168,20 @@ fun ItemDetails(
             ItemDetailsRow(
                 labelResID ="No. Telpon",
                 itemDetail = kontak.telepon,
+                modifier = Modifier.padding(
+                    horizontal = 12.dp
+                )
+            )
+            ItemDetailsRow(
+                labelResID ="Tanggal",
+                itemDetail = kontak.tanggal,
+                modifier = Modifier.padding(
+                    horizontal = 12.dp
+                )
+            )
+            ItemDetailsRow(
+                labelResID ="Jam",
+                itemDetail = kontak.jam,
                 modifier = Modifier.padding(
                     horizontal = 12.dp
                 )
