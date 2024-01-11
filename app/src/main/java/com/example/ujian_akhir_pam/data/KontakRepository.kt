@@ -1,6 +1,5 @@
 package com.example.ujian_akhir_pam.data
 
-
 import android.content.ContentValues
 import android.util.Log
 import com.example.ujian_akhir_pam.model.Kontak
@@ -14,7 +13,6 @@ import kotlinx.coroutines.tasks.await
 
 interface KontakRepository{
     fun getAll(): Flow<List<Kontak>>
-    fun getSiswaStream(id: Int): Flow<Kontak?>
     suspend fun save(kontak: Kontak):String
     suspend fun update(kontak: Kontak)
     suspend fun delete(kontakId: String)
@@ -29,11 +27,6 @@ class KontakRepositoryImpl(private val firestore: FirebaseFirestore):KontakRepos
         val kontak = snapshot.toObjects(Kontak::class.java)
         emit(kontak)
     }.flowOn(Dispatchers.IO)
-
-    override fun getSiswaStream(id: Int): Flow<Kontak?> {
-        TODO("Not yet implemented")
-    }
-
 
     override suspend fun save(kontak: Kontak): String {
         return try {
@@ -65,4 +58,3 @@ class KontakRepositoryImpl(private val firestore: FirebaseFirestore):KontakRepos
     }
 
 }
-
