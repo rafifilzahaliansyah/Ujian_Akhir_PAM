@@ -28,17 +28,25 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.ujian_akhir_pam.R
 import com.example.ujian_akhir_pam.model.Kontak
 import com.example.ujian_akhir_pam.navigation.DestinasiNavigasi
 import com.example.ujian_akhir_pam.ui.KontakTopAppBar
 import com.example.ujian_akhir_pam.ui.PenyediaViewModel
+
+
 
 object DestinasiHome : DestinasiNavigasi {
     override val route = "home"
@@ -77,27 +85,53 @@ fun HomeScreen(
             }
         },
     ) { innerPadding ->
-        val uiStateSiswa by viewModel.homeUIState.collectAsState()
+        val uiStateKontak by viewModel.homeUiState.collectAsState()
+
+
+
         BodyHome(
-            itemKontak = uiStateSiswa.listKontak,
+            itemKontak = uiStateKontak.listKontak,
             modifier = Modifier
                 .padding(innerPadding)
                 .fillMaxSize(),
-            onSiswaClick = onDetailClick
+            onSiswaClick = onDetailClick,
+            onSearchQueryChanged = { query: String ->
+                viewModel.setSearchQuery(query)
+            }
         )
     }
 }
+
 
 @Composable
 fun BodyHome(
     itemKontak: List<Kontak>,
     modifier: Modifier = Modifier,
-    onSiswaClick: (String) -> Unit = {}
+    onSiswaClick: (String) -> Unit = {},
+    onSearchQueryChanged: (String) -> Unit,
+    onSearchClear: () -> Unit ={},
 ) {
+    var searchQuery by remember { mutableStateOf("") }
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = modifier
     ) {
+
+        SearchBar(
+            searchQuery = searchQuery,  // Tambahkan parameter searchQuery
+            modifier = Modifier
+                .padding(horizontal = dimensionResource(id = R.dimen.padding_medium))
+                .fillMaxWidth(),
+            onSearchQueryChanged = {
+                searchQuery = it
+                onSearchQueryChanged(it)
+            },
+            onSearchClear = {
+                searchQuery = ""
+                onSearchClear()
+            }
+        )
+
         if (itemKontak.isEmpty()) {
             Text(
                 text = "Tidak ada data Kontak",
@@ -105,12 +139,27 @@ fun BodyHome(
                 style = MaterialTheme.typography.titleLarge
             )
         } else {
-            ListKontak(
-                itemKontak = itemKontak,
-                modifier = Modifier
-                    .padding(horizontal = 8.dp),
-                onItemClick = { onSiswaClick(it.id) }
-            )
+            // Filter itemSiswa berdasarkan searchQuery
+            val filteredList = itemKontak.filter { kontak ->
+                kontak.nama.contains(searchQuery, ignoreCase = true) ||
+                        kontak.waktupenyewaan.contains(searchQuery, ignoreCase = true) ||
+                        kontak.telepon.contains(searchQuery, ignoreCase = true)
+            }
+
+            if (filteredList.isEmpty() && searchQuery.isNotEmpty()) {
+                Text(
+                    text = stringResource(R.string.search),
+                    textAlign = TextAlign.Center,
+                    style = MaterialTheme.typography.titleMedium
+                )
+            } else {
+                ListKontak(
+                    itemKontak = filteredList,
+                    modifier = Modifier
+                        .padding(horizontal = dimensionResource(id = R.dimen.padding_small)),
+                    onItemClick = { onSiswaClick(it.id) }
+                )
+            }
         }
     }
 }
