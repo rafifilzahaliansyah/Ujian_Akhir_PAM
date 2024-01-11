@@ -10,7 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.ujian_akhir_pam.ui.theme.Ujian_Akhir_PAMTheme
+import com.example.ujian_akhir_pam.theme.Ujian_Akhir_PAMTheme
 import com.google.firebase.Firebase
 import com.google.firebase.initialize
 

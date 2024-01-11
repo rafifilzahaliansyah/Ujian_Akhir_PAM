@@ -1,15 +1,14 @@
 <resources>
     <string name="app_name">Ujian_Akhir_PAM</string>
-    <string name="app_name">RoomKontak</string>
     <string name="entry_Kontak">Tambah Kontak</string>
     <string name="deskripsi_no_item">Tidak ada data Kontak. Tap + untuk menambah data</string>
     <string name="nama">Nama Kontak</string>
-    <string name="alamat">Alamat Kontak</string>
+    <string name="waktupenyewaan">Waktu Penyewaan</string>
     <string name="telpon">Telpon Kontak</string>
     <string name="tanggal">Tanggal</string>
     <string name="jam">Jam</string>
     <string name="nama1">Nama Kontak :</string>
-    <string name="alamat1">Alamat Kontak :</string>
+    <string name="waktupenyewaan1">Waktu Penyewaan 1:</string>
     <string name="telpon1">Telpon Kontak :</string>
     <string name="tanggal1">Tanggal</string>
     <string name="jam1">Jam</string>
