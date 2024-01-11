@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.Divider
@@ -20,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.ujian_akhir_pam.R
 import com.example.ujian_akhir_pam.navigation.DestinasiNavigasi
@@ -27,6 +29,8 @@ import com.example.ujian_akhir_pam.ui.DetailKontak
 import com.example.ujian_akhir_pam.ui.KontakTopAppBar
 import com.example.ujian_akhir_pam.ui.PenyediaViewModel
 import com.example.ujian_akhir_pam.ui.UIStateKontak
+import com.google.type.Date
+import com.google.type.DateTime
 import kotlinx.coroutines.launch
 
 object DestinasiKontak : DestinasiNavigasi {
@@ -105,6 +109,7 @@ fun FormInput(
     modifier: Modifier = Modifier,
     onValueChange: (DetailKontak) -> Unit = {},
     enabled: Boolean = true
+
 ) {
     Column (
         modifier = modifier,
@@ -129,6 +134,7 @@ fun FormInput(
         OutlinedTextField(
             value = detailKontak.telpon,
             onValueChange = {onValueChange(detailKontak.copy(telpon=it)) },
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
             label = { Text(stringResource(R.string.telpon)) },
             modifier = Modifier.fillMaxWidth(),
             enabled = enabled,
@@ -145,6 +151,7 @@ fun FormInput(
         OutlinedTextField(
             value = detailKontak.jam,
             onValueChange = {onValueChange(detailKontak.copy(jam  =it)) },
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
             label = { Text(stringResource(R.string.jam)) },
             modifier = Modifier.fillMaxWidth(),
             enabled = enabled,
