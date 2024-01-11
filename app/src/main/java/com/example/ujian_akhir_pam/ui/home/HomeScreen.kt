@@ -163,7 +163,15 @@ fun DataKontak(
                 )
             }
             Text(
-                text = kontak.alamat,
+                text = kontak.waktupenyewaan,
+                style = MaterialTheme.typography.titleMedium
+            )
+            Text(
+                text = kontak.tanggal,
+                style = MaterialTheme.typography.titleMedium
+            )
+            Text(
+                text = kontak.jam,
                 style = MaterialTheme.typography.titleMedium
             )
         }
