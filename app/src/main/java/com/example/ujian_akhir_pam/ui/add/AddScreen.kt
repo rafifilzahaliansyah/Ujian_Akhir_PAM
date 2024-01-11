@@ -119,8 +119,8 @@ fun FormInput(
             singleLine = true
         )
         OutlinedTextField(
-            value = detailKontak.alamat,
-            onValueChange = {onValueChange(detailKontak.copy(alamat=it)) },
+            value = detailKontak.waktupenyewaan,
+            onValueChange = {onValueChange(detailKontak.copy(waktupenyewaan =it)) },
             label = { Text(stringResource(R.string.waktupenyewaan)) },
             modifier = Modifier.fillMaxWidth(),
             enabled = enabled,
@@ -130,6 +130,22 @@ fun FormInput(
             value = detailKontak.telpon,
             onValueChange = {onValueChange(detailKontak.copy(telpon=it)) },
             label = { Text(stringResource(R.string.telpon)) },
+            modifier = Modifier.fillMaxWidth(),
+            enabled = enabled,
+            singleLine = true
+        )
+        OutlinedTextField(
+            value = detailKontak.tanggal,
+            onValueChange = {onValueChange(detailKontak.copy(tanggal =it)) },
+            label = { Text(stringResource(R.string.tanggal)) },
+            modifier = Modifier.fillMaxWidth(),
+            enabled = enabled,
+            singleLine = true
+        )
+        OutlinedTextField(
+            value = detailKontak.jam,
+            onValueChange = {onValueChange(detailKontak.copy(jam  =it)) },
+            label = { Text(stringResource(R.string.jam)) },
             modifier = Modifier.fillMaxWidth(),
             enabled = enabled,
             singleLine = true
