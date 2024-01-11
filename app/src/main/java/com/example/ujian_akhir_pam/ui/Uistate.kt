@@ -9,17 +9,17 @@ data class UIStateKontak(
 data class  DetailKontak(
     val id: String = "",
     val nama : String= "",
-    val alamat : String= "",
+    val waktupenyewaan : String= "",
     val telpon : String= "",
-    val tanggal: String= "",
-    val jam : String= "",
+    val tanggal : String = "",
+    val jam : String = ""
 )
 
 /* Fungsi untuk mengkonversi data input ke data dalam tabel sesuai jenis datanya*/
 fun DetailKontak.toKontak(): Kontak = Kontak(
     id = id,
     nama = nama,
-    alamat = alamat,
+    waktupenyewaan = waktupenyewaan,
     telepon = telpon,
     tanggal = tanggal,
     jam = jam
@@ -33,7 +33,7 @@ fun Kontak.toDetailKontak(): DetailKontak =
     DetailKontak(
         id = id,
         nama = nama,
-        alamat = alamat,
+        waktupenyewaan = waktupenyewaan,
         telpon = telepon,
         tanggal = tanggal,
         jam = jam
@@ -47,3 +47,4 @@ data class HomeUIState(
     val listKontak: List<Kontak> = listOf(),
     val dataLength: Int = 0
 )
+
