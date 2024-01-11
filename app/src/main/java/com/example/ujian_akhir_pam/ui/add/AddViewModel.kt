@@ -20,7 +20,7 @@ class AddViewModel(private val kontakRepository: KontakRepository): ViewModel(){
 
     fun updateUiState(detailKontak: DetailKontak) {
         uiStateKontak=
-            UIStateKontak(detailKontak = detailKontak)
+            UIStateKontak(detailKontak = detailKontak,)
     }
 
     /*Fungsi untuk menyimpan data yang di-entry */
