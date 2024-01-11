@@ -5,10 +5,6 @@ data class Kontak(
     val nama: String,
     val alamat: String,
     val telepon: String,
-    val tanggal: String,
-    val jam : String,
 ){
-    constructor(): this("","","","", "", "")
-
+    constructor(): this("","","","")
 }
-
